@@ -1,0 +1,10 @@
+# Virtual environment - uv creates this automatically
+.venv/
+
+# uv lock file can be committed for reproducibility,
+# but regenerates on uv sync if pyproject.toml changes
+# uv.lock
+
+# Python cache
+__pycache__/
+*.pyc
