@@ -1,0 +1,13 @@
+{
+  "name": "agent-plugins",
+  "owner": { "name": "Michael Sakaluk" },
+  "plugins": [
+    { "name": "investigating-datadog", "description": "Query Datadog logs, metrics, monitors, hosts, events, and APM traces for debugging and investigation.", "source": "./investigating-datadog" },
+    { "name": "managing-confluence", "description": "Manage Confluence Cloud pages via REST API — create, read, update, delete pages, manage attachments, and search content.", "source": "./managing-confluence" },
+    { "name": "managing-jira", "description": "Interact with Jira via Atlassian CLI — create, search, and manage tickets, projects, boards, and sprints.", "source": "./managing-jira" },
+    { "name": "reflecting-on-skills", "description": "Analyze skill usage after each invocation and suggest improvements via PostToolUse hook-driven self-reflection.", "source": "./reflecting-on-skills" },
+    { "name": "suggesting-skills", "description": "Analyze Claude Code sessions to identify repeated patterns and suggest new skills based on usage.", "source": "./suggesting-skills" },
+    { "name": "summarize-meeting", "description": "Generate comprehensive meeting summaries from Zoom recordings — frame extraction, transcript processing, and chat analysis.", "source": "./summarize-meeting" },
+    { "name": "writing-skills", "description": "Guide for authoring well-structured Agent Skills — SKILL.md structure, naming conventions, and best practices.", "source": "./writing-skills" }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "name": "investigating-datadog",
+  "version": "1.0.0",
+  "description": "Query Datadog logs, metrics, monitors, hosts, events, and APM traces for debugging and investigation."
+}

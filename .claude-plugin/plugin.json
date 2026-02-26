@@ -1,5 +1,0 @@
-{
-  "name": "agent-plugins",
-  "version": "1.0.0",
-  "description": "Agent plugins, skills, and extensions for Claude Code — Datadog, Confluence, Jira, meeting summaries, skill authoring, and meta-skills for continuous improvement."
-}

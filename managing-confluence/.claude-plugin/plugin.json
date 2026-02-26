@@ -1,0 +1,5 @@
+{
+  "name": "managing-confluence",
+  "version": "1.0.0",
+  "description": "Manage Confluence Cloud pages via REST API — create, read, update, delete pages, manage attachments, and search content."
+}

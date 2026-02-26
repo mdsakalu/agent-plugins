@@ -1,0 +1,5 @@
+{
+  "name": "reflecting-on-skills",
+  "version": "1.0.0",
+  "description": "Analyze skill usage after each invocation and suggest improvements via PostToolUse hook-driven self-reflection."
+}

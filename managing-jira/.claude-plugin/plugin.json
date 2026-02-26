@@ -1,0 +1,5 @@
+{
+  "name": "managing-jira",
+  "version": "1.0.0",
+  "description": "Interact with Jira via Atlassian CLI — create, search, and manage tickets, projects, boards, and sprints."
+}

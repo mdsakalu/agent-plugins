@@ -1,0 +1,5 @@
+{
+  "name": "suggesting-skills",
+  "version": "1.0.0",
+  "description": "Analyze Claude Code sessions to identify repeated patterns and suggest new skills based on usage."
+}

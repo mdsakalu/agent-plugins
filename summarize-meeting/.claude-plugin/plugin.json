@@ -1,0 +1,5 @@
+{
+  "name": "summarize-meeting",
+  "version": "1.0.0",
+  "description": "Generate comprehensive meeting summaries from Zoom recordings — frame extraction, transcript processing, and chat analysis."
+}
