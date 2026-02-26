@@ -8,6 +8,7 @@
     { "name": "reflecting-on-skills", "description": "Analyze skill usage after each invocation and suggest improvements via PostToolUse hook-driven self-reflection.", "source": "./reflecting-on-skills" },
     { "name": "suggesting-skills", "description": "Analyze Claude Code sessions to identify repeated patterns and suggest new skills based on usage.", "source": "./suggesting-skills" },
     { "name": "summarize-meeting", "description": "Generate comprehensive meeting summaries from Zoom recordings — frame extraction, transcript processing, and chat analysis.", "source": "./summarize-meeting" },
-    { "name": "writing-skills", "description": "Guide for authoring well-structured Agent Skills — SKILL.md structure, naming conventions, and best practices.", "source": "./writing-skills" }
+    { "name": "writing-skills", "description": "Guide for authoring well-structured Agent Skills — SKILL.md structure, naming conventions, and best practices.", "source": "./writing-skills" },
+    { "name": "workspace", "description": "Universal workspace management — JJ workspaces, notes, PR/Jira auto-capture, cross-repo navigation.", "source": "./workspace" }
   ]
 }
