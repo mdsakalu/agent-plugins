@@ -1,0 +1,5 @@
+{
+  "name": "creating-mermaid-diagrams",
+  "version": "1.0.0",
+  "description": "Generate GitHub-compatible Mermaid diagrams with tested color palettes, local SVG/PNG preview, and gist-based GitHub rendering preview."
+}

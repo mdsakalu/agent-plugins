@@ -11,6 +11,7 @@ A marketplace of agent plugins, skills, and extensions for [Claude Code](https:/
 Then install individual plugins:
 
 ```bash
+/plugin install creating-mermaid-diagrams@agent-plugins
 /plugin install investigating-datadog@agent-plugins
 /plugin install managing-confluence@agent-plugins
 /plugin install managing-jira@agent-plugins
@@ -24,6 +25,7 @@ Then install individual plugins:
 
 | Plugin | Description |
 |--------|-------------|
+| [creating-mermaid-diagrams](creating-mermaid-diagrams/) | Generate GitHub-compatible Mermaid diagrams with tested color palettes, local preview, and gist-based GitHub rendering |
 | [investigating-datadog](investigating-datadog/) | Query Datadog logs, metrics, monitors, hosts, events, and APM traces for debugging and investigation |
 | [managing-confluence](managing-confluence/) | Manage Confluence Cloud pages via REST API — create, read, update, delete pages, manage attachments, and search content |
 | [managing-jira](managing-jira/) | Interact with Jira via Atlassian CLI — create, search, and manage tickets, projects, boards, and sprints |
@@ -33,6 +35,12 @@ Then install individual plugins:
 | [writing-skills](writing-skills/) | Guide for authoring well-structured Agent Skills — SKILL.md structure, naming conventions, and best practices |
 
 ## Plugin Details
+
+### creating-mermaid-diagrams
+
+Generates GitHub-compatible Mermaid diagrams that render correctly in markdown files, pull requests, issues, and comments. Includes 24 named color themes tested on both GitHub light and dark modes, local SVG/PNG preview via mermaid CLI, and gist-based GitHub rendering preview.
+
+**Requires:** Optional: `npx @mermaid-js/mermaid-cli` for local preview, `gh` CLI for gist preview.
 
 ### investigating-datadog
 
