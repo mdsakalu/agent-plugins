@@ -49,11 +49,21 @@ flowchart TD
 
 Always include `accTitle` and `accDescr` for accessibility.
 
+## Design Philosophy
+
+Start with structure. Add styling only where it earns its place. See
+`references/style-guide.md` for the full guide. The priority order:
+
+1. **Structure** -- Shapes carry meaning (diamonds=decisions, cylinders=storage, pills=terminals)
+2. **Edge weight** -- `==>` for happy path, `-->` for standard, `-.->` for optional/fallback
+3. **Color** -- Reinforces meaning, never carries it alone. Most nodes should be neutral.
+4. **Emphasis** -- stroke-width, dashed borders, emoji, bold labels -- only to solve specific problems
+
 ## Workflow
 
 1. **Choose diagram type** -- Match the user's intent to a diagram type (see table below or `references/diagram-types.md` for full syntax)
-2. **Write the diagram** -- Use snake_case node IDs, quote reserved words
-3. **Apply styling** -- Use classDef from the Default Styling section or pick a theme from `references/themes.md`
+2. **Write the diagram** -- Use snake_case node IDs, quote reserved words, pick shapes that match meaning
+3. **Apply styling** -- Start with 0-1 colors. Add more only as the diagram demands. Pick a theme from `references/themes.md` as a palette menu.
 4. **Preview** -- Local SVG via `preview.sh local` or GitHub rendering via `preview.sh gist`
 5. **Embed** -- Place the fenced code block in the target markdown file
 
@@ -128,7 +138,7 @@ flowchart TD
 ### What GitHub Does NOT Support
 
 - `%%{init: {'theme': 'dark'}}%%` -- theme directives are **ignored**
-- HTML tags in labels (`<b>`, `<br/>`) -- use `\n` for line breaks if needed
+- HTML tags in labels (`<b>`, `<br/>`) -- `\n` line breaks also do **not** work
 - Nested subgraphs beyond 2 levels deep (rendering breaks)
 - Diagrams with more than ~100 nodes (performance degrades)
 - `click` callbacks (security restriction)
@@ -136,52 +146,52 @@ flowchart TD
 
 For the complete compatibility reference, see `references/github-compatibility.md`.
 
-## Default Styling
+## Styling
 
-Ready-to-use classDef set tested on GitHub light and dark modes:
+Use shapes and edge weight first, then add color where it earns its place.
+See `references/style-guide.md` for the full design guide.
 
-```
-%% Semantic color classes -- GitHub light+dark safe
-classDef primary fill:#4493f8,stroke:#1f6feb,color:#fff
-classDef secondary fill:#8b949e,stroke:#6e7681,color:#fff
-classDef success fill:#3fb950,stroke:#238636,color:#fff
-classDef warning fill:#d29922,stroke:#9e6a03,color:#fff
-classDef danger fill:#f85149,stroke:#da3633,color:#fff
-classDef muted fill:#30363d,stroke:#484f58,color:#8b949e
-classDef info fill:#58a6ff,stroke:#388bfd,color:#fff
-```
+### Shapes carry meaning
 
-### Applying Classes
+| Shape | Syntax | Use for |
+|-------|--------|---------|
+| Rectangle | `["Label"]` | Process, action |
+| Pill | `(["Label"])` | Start/end, actor |
+| Diamond | `{"Label"}` | Decision |
+| Cylinder | `[("Label")]` | Database, store |
+| Hexagon | `{{"Label"}}` | Exception, error |
 
-```mermaid
-flowchart TD
-    user["User"] --> api["API Gateway"]
-    api --> auth{"Authenticate"}
-    auth -->|Pass| service["Service"]
-    auth -->|Fail| error["Error"]
-    service --> db[("Database")]
+### Edge weight tells the story
 
-    class user primary
-    class api info
-    class auth warning
-    class service success
-    class error danger
-    class db secondary
-```
+- `==>` thick -- happy path (use sparingly)
+- `-->` normal -- standard flow
+- `-.->` dotted -- optional, async, fallback
+- `== label ==>` / `-- label -->` / `-. label .->` -- labeled variants (label syntax must match arrow type)
 
-### Edge Styling
+### Color reinforces (pick a theme from `references/themes.md`)
+
+Most nodes should be neutral. Color only the nodes that matter: the decision,
+the success outcome, the failure state.
 
 ```
-%% Default edge style
-linkStyle default stroke:#8b949e,stroke-width:2px
-
-%% Style a specific edge by index (0-based)
-linkStyle 0 stroke:#4493f8,stroke-width:3px
-linkStyle 2 stroke:#f85149,stroke-width:2px,stroke-dasharray:5
+%% Three-tone classDef: distinct fill, stroke, text
+classDef primary fill:#89b4fa,stroke:#45475a,stroke-width:2px,color:#1e1e2e
+classDef muted   fill:#6c7086,stroke:#45475a,stroke-width:1px,color:#cdd6f4
+classDef success fill:#a6e3a1,stroke:#45475a,stroke-width:2px,color:#1e1e2e
+classDef danger  fill:#f38ba8,stroke:#313244,stroke-width:2px,color:#1e1e2e
 ```
+
+### Full toolkit (use to solve specific problems)
+
+- **stroke-width**: 3px on key nodes, 2px default, 1px to recede
+- **stroke-dasharray:5**: dashed borders for external/optional systems
+- **rx/ry**: corner radius (rx:2 sharp, rx:8 soft, rx:12 round -- pick one per diagram)
+- **Emoji**: only at boundaries (actors, external systems) -- not every node
+- **`**Bold**` in labels**: highlight a key word when scanning matters
+- **linkStyle**: color/weight per edge -- `linkStyle 0 stroke:#89b4fa,stroke-width:3px`
 
 For themed palettes (Dracula, Nord, Catppuccin, etc.), see `references/themes.md`.
-For advanced styling patterns, see `references/style-guide.md`.
+For the full design guide, see `references/style-guide.md`.
 
 ## Preview Workflow
 

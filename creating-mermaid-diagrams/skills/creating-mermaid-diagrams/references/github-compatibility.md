@@ -110,9 +110,10 @@ What happens on GitHub:
 
 **Alternatives:**
 
-- For line breaks: use `\n` inside quoted labels where the diagram type
-  supports it (flowchart does in some builds, sequence diagram note blocks do).
-- For emphasis: rely on UPPERCASE, dashes, or structural separation instead.
+- For line breaks: `\n` does **not** work on GitHub's renderer. Split long
+  labels into multiple connected nodes or keep labels concise.
+- For emphasis: use Markdown `**bold**` in labels (confirmed working on GitHub),
+  or rely on UPPERCASE and structural separation.
 - For complex formatted labels: split into multiple connected nodes.
 
 ---
